@@ -1,0 +1,28 @@
+{
+  "status": "AMEA\u00c7A DETECTADA",
+  "label": 9,
+  "classificacao": "T1486 - Data Encrypted for Impact (Ransomware)",
+  "priority": "ALTA",
+  "confidence": 0.8703838185455517,
+  "anomaly_score": 0.7148694461722634,
+  "is_anomaly": true,
+  "action": "ALERTAR_SOC",
+  "timestamp": "2025-10-20T15:36:42.338535",
+  "tempo_analise_ms": 302.84786224365234,
+  "evento_id": "evt_1760985402338",
+  "agente_id": null,
+  "telemetria": {
+    "process_id_count": 259.0,
+    "process_cpu_usage": 38.6,
+    "disk_io_rate": 113058.142578125,
+    "network_connections": 182.0,
+    "file_writes": 4351968.0,
+    "duration_seconds": 60.0,
+    "memory_usage_mb": 17626.2890625,
+    "thread_count": 3205.0,
+    "registry_modifications": 0.0,
+    "dns_queries": 0.0,
+    "suspicious_ports": 0.0,
+    "parent_process_anomaly": 0.0
+  }
+}

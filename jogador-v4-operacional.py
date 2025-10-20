@@ -1,6 +1,6 @@
 """
-EDR ULTRA v4.0 - JOGADOR OPERACIONAL
-Sistema de detecção em tempo real com API REST e logging completo
+EDR ULTRA v5.0 - JOGADOR OPERACIONAL MELHORADO
+Sistema de detecção com suporte a agentes remotos e análise centralizada
 """
 
 import pandas as pd
@@ -28,7 +28,7 @@ os.makedirs('logs', exist_ok=True)
 os.makedirs('alertas', exist_ok=True)
 os.makedirs('dados', exist_ok=True)
 
-# Logging com encoding UTF-8 para Windows
+# Logging com encoding UTF-8
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
@@ -40,15 +40,17 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Argumentos
-parser = argparse.ArgumentParser(description='EDR Ultra v4.0 - Detector Operacional')
+parser = argparse.ArgumentParser(description='EDR Ultra v5.0 - Detector Operacional')
 parser.add_argument('--mode', choices=['demo', 'api', 'daemon'], default='demo', 
                     help='Modo de operação')
 parser.add_argument('--port', type=int, default=8000, help='Porta da API')
 parser.add_argument('--interval', type=int, default=60, help='Intervalo daemon (segundos)')
+parser.add_argument('--host', type=str, default='0.0.0.0', help='Host da API')
+parser.add_argument('--enable-agents', action='store_true', help='Ativar suporte a agentes')
 args = parser.parse_args()
 
 # ----------------------------------------------------------------------
-# FEATURE ENGINEERING (DEVE SER IDÊNTICO AO TREINO)
+# FEATURE ENGINEERING (IDÊNTICO AO TREINO)
 # ----------------------------------------------------------------------
 
 def advanced_feature_engineering(df):
@@ -72,15 +74,15 @@ def advanced_feature_engineering(df):
     return df
 
 # ----------------------------------------------------------------------
-# CARREGAR MODELOS
+# MOTOR DE DETECÇÃO
 # ----------------------------------------------------------------------
 
 class EDREngine:
-    """Motor principal de detecção."""
+    """Motor principal de detecção melhorado."""
     
     def __init__(self):
         logger.info("="*70)
-        logger.info("EDR ULTRA v4.0 - INICIALIZANDO MOTOR DE DETECÇÃO")
+        logger.info("EDR ULTRA v5.0 - INICIALIZANDO MOTOR DE DETECÇÃO")
         logger.info("="*70)
         
         # Carregar modelos
@@ -117,11 +119,23 @@ class EDREngine:
                 'ameacas_detectadas': 0,
                 'alertas_criticos': 0,
                 'alertas_altos': 0,
-                'tempo_medio_ms': 0.0
+                'tempo_medio_ms': 0.0,
+                'agentes_conectados': 0,
+                'ultima_atualizacao': datetime.now().isoformat()
             }
             
-            # Buffer de histórico (últimas 1000 detecções)
+            # Registro de agentes
+            self.agentes = {}
+            
+            # Buffer de histórico
             self.historico = deque(maxlen=1000)
+            
+            # Whitelist e blacklist
+            self.whitelist = set()
+            self.blacklist = set()
+            
+            # Sensibilidade
+            self.sensitivity = 0.85
             
             logger.info("="*70)
             logger.info("✅ SISTEMA OPERACIONAL E PRONTO!")
@@ -132,12 +146,30 @@ class EDREngine:
             logger.error("Execute primeiro: python treinador-v4-ultra.py")
             sys.exit(1)
     
-    def analisar_evento(self, telemetria):
+    def registrar_agente(self, agente_info):
+        """Registra um novo agente."""
+        agente_id = agente_info.get('agente_id')
+        self.agentes[agente_id] = {
+            **agente_info,
+            'ultima_conexao': datetime.now().isoformat(),
+            'eventos_enviados': 0,
+            'ameacas_detectadas': 0
+        }
+        self.stats['agentes_conectados'] = len(self.agentes)
+        logger.info(f"✓ Agente registrado: {agente_id} ({agente_info.get('hostname')})")
+        return {'status': 'registered', 'agente_id': agente_id}
+    
+    def analisar_evento(self, telemetria, agente_id=None):
         """Analisa um único evento de telemetria."""
         
         inicio = time.time()
         
         try:
+            # Atualizar agente se fornecido
+            if agente_id and agente_id in self.agentes:
+                self.agentes[agente_id]['ultima_conexao'] = datetime.now().isoformat()
+                self.agentes[agente_id]['eventos_enviados'] += 1
+            
             # Converter para DataFrame
             if isinstance(telemetria, dict):
                 df = pd.DataFrame([telemetria])
@@ -156,7 +188,7 @@ class EDREngine:
             pred_anomaly = self.anomaly.predict(df_scaled)[0]
             anomaly_score = -self.anomaly.score_samples(df_scaled)[0]
             
-            # Análise híbrida
+            # Análise híbrida com sensibilidade ajustável
             resultado = self._analisar_hibrido(
                 pred_class, pred_proba, pred_anomaly, anomaly_score
             )
@@ -165,9 +197,10 @@ class EDREngine:
             resultado['timestamp'] = datetime.now().isoformat()
             resultado['tempo_analise_ms'] = (time.time() - inicio) * 1000
             resultado['evento_id'] = f"evt_{int(time.time()*1000)}"
+            resultado['agente_id'] = agente_id
             
             # Atualizar estatísticas
-            self._atualizar_stats(resultado)
+            self._atualizar_stats(resultado, agente_id)
             
             # Salvar no histórico
             self.historico.append(resultado)
@@ -187,13 +220,16 @@ class EDREngine:
             }
     
     def _analisar_hibrido(self, pred_class, pred_proba, pred_anomaly, anomaly_score):
-        """Motor de decisão híbrido."""
+        """Motor de decisão híbrido com sensibilidade ajustável."""
         
         confidence = pred_proba.max()
         is_anomaly = pred_anomaly == -1
         
+        # Aplicar sensibilidade
+        threshold = self.sensitivity
+        
         # Lógica de fusão avançada
-        if pred_class != 0 and confidence > 0.85:
+        if pred_class != 0 and confidence > threshold:
             return {
                 'status': 'AMEAÇA DETECTADA',
                 'label': int(pred_class),
@@ -265,12 +301,15 @@ class EDREngine:
                 'action': 'NENHUMA'
             }
     
-    def _atualizar_stats(self, resultado):
+    def _atualizar_stats(self, resultado, agente_id=None):
         """Atualiza estatísticas do sistema."""
         self.stats['total_analisados'] += 1
+        self.stats['ultima_atualizacao'] = datetime.now().isoformat()
         
         if resultado['label'] != 0:
             self.stats['ameacas_detectadas'] += 1
+            if agente_id and agente_id in self.agentes:
+                self.agentes[agente_id]['ameacas_detectadas'] += 1
         
         if resultado['priority'] == 'CRÍTICA':
             self.stats['alertas_criticos'] += 1
@@ -304,9 +343,18 @@ class EDREngine:
     def get_historico_recente(self, n=10):
         """Retorna últimas N detecções."""
         return list(self.historico)[-n:]
+    
+    def get_agentes(self):
+        """Retorna lista de agentes conectados."""
+        return self.agentes.copy()
+    
+    def set_sensitivity(self, value):
+        """Define sensibilidade de detecção."""
+        self.sensitivity = max(0.5, min(0.99, value))
+        logger.info(f"Sensibilidade ajustada para: {self.sensitivity:.2%}")
 
 # ----------------------------------------------------------------------
-# MODO DEMO (Eventos Pré-configurados)
+# MODO DEMO
 # ----------------------------------------------------------------------
 
 def modo_demo(engine):
@@ -381,7 +429,6 @@ def modo_demo(engine):
         
         resultado = engine.analisar_evento(evento['telemetria'])
         
-        # Exibir resultado
         print(f"\n🔍 STATUS: {resultado['status']}")
         print(f"⚠️  PRIORIDADE: {resultado['priority']}")
         print(f"📌 CLASSIFICAÇÃO: {resultado['classificacao']}")
@@ -390,11 +437,10 @@ def modo_demo(engine):
         print(f"⚡ AÇÃO: {resultado['action']}")
         print(f"⏱️  Tempo análise: {resultado['tempo_analise_ms']:.2f}ms")
     
-    # Estatísticas finais
+    stats = engine.get_stats()
     logger.info(f"\n{'='*70}")
     logger.info("ESTATÍSTICAS DA DEMONSTRAÇÃO")
     logger.info(f"{'='*70}")
-    stats = engine.get_stats()
     print(f"\n📊 Total analisado: {stats['total_analisados']}")
     print(f"🚨 Ameaças detectadas: {stats['ameacas_detectadas']}")
     print(f"🔴 Alertas críticos: {stats['alertas_criticos']}")
@@ -403,25 +449,26 @@ def modo_demo(engine):
     print(f"\n✅ Demonstração concluída!")
 
 # ----------------------------------------------------------------------
-# MODO API (REST API com FastAPI)
+# MODO API COM SUPORTE A AGENTES
 # ----------------------------------------------------------------------
 
 def modo_api(engine):
-    """Inicia servidor de API REST."""
+    """Inicia servidor de API REST com suporte a agentes."""
     
     try:
-        from fastapi import FastAPI, HTTPException
+        from fastapi import FastAPI, HTTPException, Header
         from fastapi.middleware.cors import CORSMiddleware
         from pydantic import BaseModel
+        from typing import Optional
         import uvicorn
     except ImportError:
         logger.error("❌ FastAPI não instalado. Execute: pip install fastapi uvicorn")
         sys.exit(1)
     
     app = FastAPI(
-        title="EDR Ultra API v4.0",
-        description="API de Detecção de Ameaças em Tempo Real",
-        version="4.0"
+        title="EDR Ultra API v5.0",
+        description="API de Detecção com Suporte a Agentes Distribuídos",
+        version="5.0"
     )
     
     # CORS
@@ -433,7 +480,14 @@ def modo_api(engine):
         allow_headers=["*"],
     )
     
-    # Modelo de dados
+    # Modelos de dados
+    class AgenteRegistro(BaseModel):
+        agente_id: str
+        hostname: str
+        sistema_operacional: str
+        versao_agente: str
+        ip_address: Optional[str] = None
+    
     class TelemetriaEvento(BaseModel):
         process_id_count: int
         process_cpu_usage: float
@@ -448,20 +502,45 @@ def modo_api(engine):
         suspicious_ports: int
         parent_process_anomaly: float
     
+    class SensitivityConfig(BaseModel):
+        sensitivity: float
+    
     @app.get("/")
     def root():
         return {
             "service": "EDR Ultra API",
-            "version": "4.0",
+            "version": "5.0",
             "status": "operational",
-            "endpoints": ["/analyze", "/stats", "/history", "/health"]
+            "features": ["agents", "realtime", "ml-detection"],
+            "endpoints": {
+                "analysis": "/analyze",
+                "agents": "/agents/register, /agents/list",
+                "stats": "/stats",
+                "config": "/config/sensitivity"
+            }
+        }
+    
+    @app.post("/agents/register")
+    def registrar_agente(agente: AgenteRegistro):
+        """Registra um novo agente."""
+        return engine.registrar_agente(agente.dict())
+    
+    @app.get("/agents/list")
+    def listar_agentes():
+        """Lista todos os agentes conectados."""
+        return {
+            "total": len(engine.agentes),
+            "agentes": engine.get_agentes()
         }
     
     @app.post("/analyze")
-    def analisar(evento: TelemetriaEvento):
+    def analisar(
+        evento: TelemetriaEvento,
+        agente_id: Optional[str] = Header(None)
+    ):
         """Analisa um evento de telemetria."""
         try:
-            resultado = engine.analisar_evento(evento.dict())
+            resultado = engine.analisar_evento(evento.dict(), agente_id)
             return resultado
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
@@ -476,23 +555,39 @@ def modo_api(engine):
         """Retorna histórico recente."""
         return engine.get_historico_recente(limit)
     
+    @app.post("/config/sensitivity")
+    def configurar_sensibilidade(config: SensitivityConfig):
+        """Ajusta sensibilidade de detecção."""
+        engine.set_sensitivity(config.sensitivity)
+        return {
+            "status": "success",
+            "sensitivity": engine.sensitivity
+        }
+    
     @app.get("/health")
     def health():
         """Health check."""
         return {
             "status": "healthy",
             "timestamp": datetime.now().isoformat(),
-            "stats": engine.get_stats()
+            "stats": engine.get_stats(),
+            "agents": len(engine.agentes)
         }
     
     logger.info(f"\n🌐 Iniciando API REST na porta {args.port}...")
-    logger.info(f"📖 Documentação: http://localhost:{args.port}/docs")
+    logger.info(f"🔗 Host: {args.host}")
+    logger.info(f"📖 Documentação: http://{args.host}:{args.port}/docs")
+    
+    if args.enable_agents:
+        logger.info("✅ Suporte a agentes ATIVADO")
+        logger.info("📡 Agentes podem se registrar em: /agents/register")
+    
     logger.info(f"✅ API pronta para receber requisições!\n")
     
-    uvicorn.run(app, host="0.0.0.0", port=args.port, log_level="info")
+    uvicorn.run(app, host=args.host, port=args.port, log_level="info")
 
 # ----------------------------------------------------------------------
-# MODO DAEMON (Monitoramento Contínuo)
+# MODO DAEMON
 # ----------------------------------------------------------------------
 
 def modo_daemon(engine):
@@ -509,7 +604,6 @@ def modo_daemon(engine):
     
     while True:
         try:
-            # Coletar telemetria do sistema
             telemetria = {
                 'process_id_count': len(psutil.pids()),
                 'process_cpu_usage': psutil.cpu_percent(interval=1),
@@ -525,10 +619,8 @@ def modo_daemon(engine):
                 'parent_process_anomaly': 0.0
             }
             
-            # Analisar
             resultado = engine.analisar_evento(telemetria)
             
-            # Log apenas se anormal
             if resultado['priority'] != 'BAIXA':
                 logger.warning(
                     f"⚠️  {resultado['status']} | "
@@ -538,7 +630,6 @@ def modo_daemon(engine):
             else:
                 logger.info("✓ Sistema normal")
             
-            # Aguardar próximo ciclo
             time.sleep(args.interval)
             
         except KeyboardInterrupt:
@@ -548,7 +639,6 @@ def modo_daemon(engine):
             logger.error(f"Erro no loop: {e}")
             time.sleep(args.interval)
     
-    # Estatísticas finais
     stats = engine.get_stats()
     logger.info(f"\n{'='*70}")
     logger.info("ESTATÍSTICAS FINAIS")
@@ -564,11 +654,8 @@ def modo_daemon(engine):
 
 def main():
     """Ponto de entrada principal."""
-    
-    # Inicializar engine
     engine = EDREngine()
     
-    # Executar modo selecionado
     if args.mode == 'demo':
         modo_demo(engine)
     elif args.mode == 'api':

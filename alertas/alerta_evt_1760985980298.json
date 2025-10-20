@@ -1,0 +1,28 @@
+{
+  "status": "AMEA\u00c7A CONFIRMADA (Multi-Camadas)",
+  "label": 10,
+  "classificacao": "T1571 - Non-Standard Port",
+  "priority": "CR\u00cdTICA",
+  "confidence": 0.5309077583692412,
+  "anomaly_score": 0.7235915760526106,
+  "is_anomaly": true,
+  "action": "BLOQUEAR_IMEDIATAMENTE",
+  "timestamp": "2025-10-20T15:46:20.298211",
+  "tempo_analise_ms": 321.9161033630371,
+  "evento_id": "evt_1760985980298",
+  "agente_id": "agent_DESKTOP-VREEU4M_unknown",
+  "telemetria": {
+    "process_id_count": 256.0,
+    "process_cpu_usage": 8.0,
+    "disk_io_rate": 190123.02783203125,
+    "network_connections": 181.0,
+    "file_writes": 4394910.0,
+    "duration_seconds": 60.0,
+    "memory_usage_mb": 17436.09765625,
+    "thread_count": 3137.0,
+    "registry_modifications": 0.0,
+    "dns_queries": 0.0,
+    "suspicious_ports": 50.0,
+    "parent_process_anomaly": 0.15000000000000002
+  }
+}

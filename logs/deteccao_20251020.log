@@ -182,3 +182,221 @@
 2025-10-20 14:40:32,204 [INFO] Ameaças detectadas: 15
 2025-10-20 14:40:32,205 [INFO] Alertas críticos: 0
 2025-10-20 14:40:32,206 [INFO] ======================================================================
+2025-10-20 14:48:18,680 [INFO] ======================================================================
+2025-10-20 14:48:18,681 [INFO] EDR ULTRA v4.0 - INICIALIZANDO MOTOR DE DETECÇÃO
+2025-10-20 14:48:18,683 [INFO] ======================================================================
+2025-10-20 14:48:21,558 [INFO] ======================================================================
+2025-10-20 14:48:21,559 [INFO] EDR ULTRA v4.0 - INICIALIZANDO MOTOR DE DETECÇÃO
+2025-10-20 14:48:21,559 [INFO] ======================================================================
+2025-10-20 14:48:22,218 [INFO] ✓ Modelos carregados
+2025-10-20 14:48:22,219 [INFO] ✓ Contexto MITRE: 18 técnicas
+2025-10-20 14:48:22,220 [INFO] ✓ Versão: 4.0-ultra
+2025-10-20 14:48:22,221 [INFO] ✓ Acurácia: 94.71%
+2025-10-20 14:48:22,221 [INFO] ======================================================================
+2025-10-20 14:48:22,222 [INFO] ✅ SISTEMA OPERACIONAL E PRONTO!
+2025-10-20 14:48:22,223 [INFO] ======================================================================
+
+2025-10-20 14:48:23,008 [INFO] 
+🌐 Iniciando API REST na porta 8000...
+2025-10-20 14:48:23,009 [INFO] 📖 Documentação: http://localhost:8000/docs
+2025-10-20 14:48:23,010 [INFO] ✅ API pronta para receber requisições!
+
+2025-10-20 14:48:24,770 [INFO] ✓ Modelos carregados
+2025-10-20 14:48:24,771 [INFO] ✓ Contexto MITRE: 18 técnicas
+2025-10-20 14:48:24,772 [INFO] ✓ Versão: 4.0-ultra
+2025-10-20 14:48:24,773 [INFO] ✓ Acurácia: 94.71%
+2025-10-20 14:48:24,773 [INFO] ======================================================================
+2025-10-20 14:48:24,774 [INFO] ✅ SISTEMA OPERACIONAL E PRONTO!
+2025-10-20 14:48:24,774 [INFO] ======================================================================
+
+2025-10-20 14:48:24,775 [INFO] 
+🔄 Modo Daemon iniciado (intervalo: 60s)
+2025-10-20 14:48:24,775 [INFO] Pressione Ctrl+C para encerrar
+
+2025-10-20 14:48:30,016 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760982510009.json
+2025-10-20 14:48:30,016 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 14:49:34,445 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760982574442.json
+2025-10-20 14:49:34,446 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 14:50:39,050 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760982639047.json
+2025-10-20 14:50:39,050 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 14:51:43,526 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760982703523.json
+2025-10-20 14:51:43,527 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 14:52:48,153 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760982768149.json
+2025-10-20 14:52:48,154 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 14:52:59,776 [INFO] 
+
+🛑 Encerrando daemon...
+2025-10-20 14:52:59,777 [INFO] 
+======================================================================
+2025-10-20 14:52:59,780 [INFO] ESTATÍSTICAS FINAIS
+2025-10-20 14:52:59,782 [INFO] ======================================================================
+2025-10-20 14:52:59,783 [INFO] Total analisado: 5
+2025-10-20 14:52:59,784 [INFO] Ameaças detectadas: 5
+2025-10-20 14:52:59,787 [INFO] Alertas críticos: 0
+2025-10-20 14:52:59,788 [INFO] ======================================================================
+2025-10-20 15:20:25,391 [INFO] ======================================================================
+2025-10-20 15:20:25,392 [INFO] EDR ULTRA v5.0 - INICIALIZANDO MOTOR DE DETECÇÃO
+2025-10-20 15:20:25,393 [INFO] ======================================================================
+2025-10-20 15:20:28,376 [INFO] ======================================================================
+2025-10-20 15:20:28,376 [INFO] EDR ULTRA v5.0 - INICIALIZANDO MOTOR DE DETECÇÃO
+2025-10-20 15:20:28,377 [INFO] ======================================================================
+2025-10-20 15:20:28,532 [INFO] ✓ Modelos carregados
+2025-10-20 15:20:28,534 [INFO] ✓ Contexto MITRE: 18 técnicas
+2025-10-20 15:20:28,534 [INFO] ✓ Versão: 4.0-ultra
+2025-10-20 15:20:28,535 [INFO] ✓ Acurácia: 94.71%
+2025-10-20 15:20:28,535 [INFO] ======================================================================
+2025-10-20 15:20:28,536 [INFO] ✅ SISTEMA OPERACIONAL E PRONTO!
+2025-10-20 15:20:28,536 [INFO] ======================================================================
+
+2025-10-20 15:20:29,485 [INFO] 
+🌐 Iniciando API REST na porta 8000...
+2025-10-20 15:20:29,486 [INFO] 🔗 Host: 0.0.0.0
+2025-10-20 15:20:29,486 [INFO] 📖 Documentação: http://0.0.0.0:8000/docs
+2025-10-20 15:20:29,487 [INFO] ✅ API pronta para receber requisições!
+
+2025-10-20 15:20:31,442 [INFO] ✓ Modelos carregados
+2025-10-20 15:20:31,444 [INFO] ✓ Contexto MITRE: 18 técnicas
+2025-10-20 15:20:31,445 [INFO] ✓ Versão: 4.0-ultra
+2025-10-20 15:20:31,445 [INFO] ✓ Acurácia: 94.71%
+2025-10-20 15:20:31,446 [INFO] ======================================================================
+2025-10-20 15:20:31,446 [INFO] ✅ SISTEMA OPERACIONAL E PRONTO!
+2025-10-20 15:20:31,447 [INFO] ======================================================================
+
+2025-10-20 15:20:31,447 [INFO] 
+🔄 Modo Daemon iniciado (intervalo: 60s)
+2025-10-20 15:20:31,448 [INFO] Pressione Ctrl+C para encerrar
+
+2025-10-20 15:20:35,619 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984435616.json
+2025-10-20 15:20:35,620 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:21:40,160 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984500157.json
+2025-10-20 15:21:40,161 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:22:44,729 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984564727.json
+2025-10-20 15:22:44,730 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:23:49,090 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984629088.json
+2025-10-20 15:23:49,091 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:24:53,442 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984693439.json
+2025-10-20 15:24:53,444 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:25:57,911 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984757907.json
+2025-10-20 15:25:57,912 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:27:02,361 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984822358.json
+2025-10-20 15:27:02,362 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:28:06,294 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984886291.json
+2025-10-20 15:28:06,295 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:29:10,938 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760984950935.json
+2025-10-20 15:29:10,939 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:30:15,255 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985015252.json
+2025-10-20 15:30:15,256 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:31:19,900 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985079898.json
+2025-10-20 15:31:19,901 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:32:24,400 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985144397.json
+2025-10-20 15:32:24,401 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:33:28,513 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985208510.json
+2025-10-20 15:33:28,514 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:34:33,211 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985273208.json
+2025-10-20 15:34:33,212 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:35:37,247 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985337245.json
+2025-10-20 15:35:37,248 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:36:15,181 [INFO] ✓ Agente registrado: agent_DESKTOP-VREEU4M_unknown (DESKTOP-VREEU4M)
+2025-10-20 15:36:26,837 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985386834.json
+2025-10-20 15:36:42,341 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985402338.json
+2025-10-20 15:36:42,341 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:37:33,275 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985453271.json
+2025-10-20 15:37:46,434 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985466431.json
+2025-10-20 15:37:46,435 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:38:38,798 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985518795.json
+2025-10-20 15:38:51,050 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985531047.json
+2025-10-20 15:38:51,051 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:39:45,075 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985585072.json
+2025-10-20 15:39:55,044 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985595041.json
+2025-10-20 15:39:55,045 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:40:50,946 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985650943.json
+2025-10-20 15:40:59,355 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985659352.json
+2025-10-20 15:40:59,356 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:41:56,440 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985716437.json
+2025-10-20 15:42:03,447 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985723444.json
+2025-10-20 15:42:03,448 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:43:02,335 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985782332.json
+2025-10-20 15:43:07,331 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985787328.json
+2025-10-20 15:43:07,333 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:44:08,197 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985848194.json
+2025-10-20 15:44:12,161 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985852158.json
+2025-10-20 15:44:12,163 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:45:14,550 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985914547.json
+2025-10-20 15:45:16,410 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985916407.json
+2025-10-20 15:45:16,411 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:46:20,302 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760985980298.json
+2025-10-20 15:46:21,022 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760985981019.json
+2025-10-20 15:46:21,023 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:47:25,329 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986045327.json
+2025-10-20 15:47:25,330 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:47:26,334 [WARNING] 🚨 ALERTA CRÍTICA: alertas/alerta_evt_1760986046331.json
+2025-10-20 15:48:29,881 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986109877.json
+2025-10-20 15:48:29,882 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:49:34,278 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986174274.json
+2025-10-20 15:49:34,278 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:50:38,282 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986238280.json
+2025-10-20 15:50:38,283 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:51:42,855 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986302852.json
+2025-10-20 15:51:42,856 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:53:19,437 [INFO] ======================================================================
+2025-10-20 15:53:19,438 [INFO] EDR ULTRA v5.0 - INICIALIZANDO MOTOR DE DETECÇÃO
+2025-10-20 15:53:19,439 [INFO] ======================================================================
+2025-10-20 15:53:22,553 [INFO] ======================================================================
+2025-10-20 15:53:22,553 [INFO] EDR ULTRA v5.0 - INICIALIZANDO MOTOR DE DETECÇÃO
+2025-10-20 15:53:22,554 [INFO] ======================================================================
+2025-10-20 15:53:22,647 [INFO] ✓ Modelos carregados
+2025-10-20 15:53:22,648 [INFO] ✓ Contexto MITRE: 18 técnicas
+2025-10-20 15:53:22,649 [INFO] ✓ Versão: 4.0-ultra
+2025-10-20 15:53:22,649 [INFO] ✓ Acurácia: 94.71%
+2025-10-20 15:53:22,650 [INFO] ======================================================================
+2025-10-20 15:53:22,651 [INFO] ✅ SISTEMA OPERACIONAL E PRONTO!
+2025-10-20 15:53:22,651 [INFO] ======================================================================
+
+2025-10-20 15:53:23,485 [INFO] 
+🌐 Iniciando API REST na porta 8000...
+2025-10-20 15:53:23,486 [INFO] 🔗 Host: 0.0.0.0
+2025-10-20 15:53:23,489 [INFO] 📖 Documentação: http://0.0.0.0:8000/docs
+2025-10-20 15:53:23,489 [INFO] ✅ API pronta para receber requisições!
+
+2025-10-20 15:53:25,754 [INFO] ✓ Modelos carregados
+2025-10-20 15:53:25,755 [INFO] ✓ Contexto MITRE: 18 técnicas
+2025-10-20 15:53:25,757 [INFO] ✓ Versão: 4.0-ultra
+2025-10-20 15:53:25,757 [INFO] ✓ Acurácia: 94.71%
+2025-10-20 15:53:25,758 [INFO] ======================================================================
+2025-10-20 15:53:25,758 [INFO] ✅ SISTEMA OPERACIONAL E PRONTO!
+2025-10-20 15:53:25,759 [INFO] ======================================================================
+
+2025-10-20 15:53:25,759 [INFO] 
+🔄 Modo Daemon iniciado (intervalo: 60s)
+2025-10-20 15:53:25,760 [INFO] Pressione Ctrl+C para encerrar
+
+2025-10-20 15:53:30,173 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986410170.json
+2025-10-20 15:53:30,174 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:54:34,524 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986474520.json
+2025-10-20 15:54:34,525 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:55:38,674 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986538672.json
+2025-10-20 15:55:38,675 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:56:43,297 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986603294.json
+2025-10-20 15:56:43,297 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:57:48,055 [WARNING] 🚨 ALERTA ALTA: alertas/alerta_evt_1760986668052.json
+2025-10-20 15:57:48,056 [WARNING] ⚠️  AMEAÇA DETECTADA | Prioridade: ALTA | Classificação: T1486 - Data Encrypted for Impact (Ransomware)
+2025-10-20 15:59:03,526 [INFO] ======================================================================
+2025-10-20 15:59:03,527 [INFO] EDR ULTRA v5.0 - INICIALIZANDO MOTOR DE DETECÇÃO
+2025-10-20 15:59:03,532 [INFO] ======================================================================
+2025-10-20 15:59:06,853 [INFO] ======================================================================
+2025-10-20 15:59:06,853 [INFO] EDR ULTRA v5.0 - INICIALIZANDO MOTOR DE DETECÇÃO
+2025-10-20 15:59:06,854 [INFO] ======================================================================
+2025-10-20 15:59:07,157 [INFO] ✓ Modelos carregados
+2025-10-20 15:59:07,159 [INFO] ✓ Contexto MITRE: 18 técnicas
+2025-10-20 15:59:07,159 [INFO] ✓ Versão: 4.0-ultra
+2025-10-20 15:59:07,160 [INFO] ✓ Acurácia: 94.71%
+2025-10-20 15:59:07,161 [INFO] ======================================================================
+2025-10-20 15:59:07,161 [INFO] ✅ SISTEMA OPERACIONAL E PRONTO!
+2025-10-20 15:59:07,162 [INFO] ======================================================================
+
+2025-10-20 15:59:08,097 [INFO] 
+🌐 Iniciando API REST na porta 8000...
+2025-10-20 15:59:08,098 [INFO] 🔗 Host: 0.0.0.0
+2025-10-20 15:59:08,099 [INFO] 📖 Documentação: http://0.0.0.0:8000/docs
+2025-10-20 15:59:08,099 [INFO] ✅ API pronta para receber requisições!
+
