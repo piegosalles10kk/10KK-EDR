@@ -1,0 +1,15 @@
+# Arquivo requirements.txt
+# Dependências necessárias para rodar o treinador_edr_completo_final.py
+
+# Dependências essenciais de Data Science e Machine Learning
+pandas
+numpy
+scikit-learn
+joblib
+
+# Dependências para a integração de Inteligência de Ameaças (MITRE ATT&CK)
+pyattck
+mitreattack-python
+
+#requests
+requests

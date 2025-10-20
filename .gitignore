@@ -1,0 +1,6 @@
+/modelos
+feature_columns.joblib
+model_anomaly_if.joblib
+model_classifier_rf.joblib
+scaler_edr.joblib
+training_base_edr.csv
