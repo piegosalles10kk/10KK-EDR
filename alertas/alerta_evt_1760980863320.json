@@ -1,0 +1,27 @@
+{
+  "status": "AMEA\u00c7A CONFIRMADA (Multi-Camadas)",
+  "label": 10,
+  "classificacao": "T1571 - Non-Standard Port",
+  "priority": "CR\u00cdTICA",
+  "confidence": 0.3958043269400937,
+  "anomaly_score": 0.7072538933796274,
+  "is_anomaly": true,
+  "action": "BLOQUEAR_IMEDIATAMENTE",
+  "timestamp": "2025-10-20T14:21:03.320389",
+  "tempo_analise_ms": 292.7820682525635,
+  "evento_id": "evt_1760980863320",
+  "telemetria": {
+    "process_id_count": 8.0,
+    "process_cpu_usage": 99.5,
+    "disk_io_rate": 8.2,
+    "network_connections": 250.0,
+    "file_writes": 2.0,
+    "duration_seconds": 15.0,
+    "memory_usage_mb": 2800.0,
+    "thread_count": 180.0,
+    "registry_modifications": 55.0,
+    "dns_queries": 380.0,
+    "suspicious_ports": 22.0,
+    "parent_process_anomaly": 0.95
+  }
+}

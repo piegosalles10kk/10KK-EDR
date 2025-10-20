@@ -1,0 +1,39 @@
+2025-10-20 12:05:26,025 [INFO] ======================================================================
+2025-10-20 12:05:26,026 [INFO] EDR ULTRA v4.0-ultra - SISTEMA DE TREINAMENTO AVANÇADO
+2025-10-20 12:05:26,026 [INFO] ======================================================================
+2025-10-20 12:05:26,026 [INFO] Configurações:
+2025-10-20 12:05:26,027 [INFO]   • Amostras por classe: 800
+2025-10-20 12:05:26,027 [INFO]   • Estimadores: 100
+2025-10-20 12:05:26,027 [INFO]   • Validação cruzada: NÃO
+2025-10-20 12:05:26,028 [INFO]   • Dataset customizado: Sintético
+2025-10-20 12:05:26,029 [INFO]  Gerando dataset sintético...
+2025-10-20 12:05:28,687 [INFO] 
+ Distribuição de classes:
+2025-10-20 12:05:28,689 [INFO]   Normal (No Threat Detected): 4,000
+2025-10-20 12:05:28,689 [INFO]   T1059.001 - Powershell Execution: 800
+2025-10-20 12:05:28,689 [INFO]   T1055 - Process Injection: 800
+2025-10-20 12:05:28,690 [INFO]   T1566 - Phishing/Initial Access: 800
+2025-10-20 12:05:28,691 [INFO]   T1003 - OS Credential Dumping: 800
+2025-10-20 12:05:28,691 [INFO]   T1070.004 - File Deletion: 800
+2025-10-20 12:05:28,692 [INFO]   T1027 - Obfuscated Files or Information: 800
+2025-10-20 12:05:28,692 [INFO]   T1068 - Exploitation for Privilege Escalation: 800
+2025-10-20 12:05:28,693 [INFO]   T1021.001 - Remote Desktop Protocol: 800
+2025-10-20 12:05:28,693 [INFO]   T1486 - Data Encrypted for Impact (Ransomware): 800
+2025-10-20 12:05:28,694 [INFO]   T1571 - Non-Standard Port: 800
+2025-10-20 12:05:28,694 [INFO]   T1036 - Masquerading: 800
+2025-10-20 12:05:28,695 [INFO]   T1547.001 - Registry Run Keys / Startup Folder: 800
+2025-10-20 12:05:28,695 [INFO]   T1018 - Remote System Discovery: 800
+2025-10-20 12:05:28,696 [INFO]   T1087 - Account Discovery: 800
+2025-10-20 12:05:28,696 [INFO]   T1560 - Archive Collected Data (Exfiltration): 800
+2025-10-20 12:05:28,769 [INFO] 
+ Divisão dos dados:
+2025-10-20 12:05:28,770 [INFO]   • Treino: 12,000 eventos (75.0%)
+2025-10-20 12:05:28,773 [INFO]   • Teste: 4,000 eventos (25.0%)
+2025-10-20 12:05:28,846 [INFO] 
+======================================================================
+2025-10-20 12:05:28,847 [INFO]  TREINAMENTO DO ENSEMBLE MULTI-ALGORITMO
+2025-10-20 12:05:28,848 [INFO] ======================================================================
+2025-10-20 12:05:28,849 [INFO] 
+[1/3] Treinando Random Forest...
+2025-10-20 12:05:28,851 [INFO] [2/3] Treinando Gradient Boosting...
+2025-10-20 12:05:28,852 [INFO] [3/3] Treinando Neural Network...

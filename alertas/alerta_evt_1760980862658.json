@@ -1,0 +1,27 @@
+{
+  "status": "AMEA\u00c7A CONFIRMADA (Multi-Camadas)",
+  "label": 9,
+  "classificacao": "T1486 - Data Encrypted for Impact (Ransomware)",
+  "priority": "CR\u00cdTICA",
+  "confidence": 0.4730973438828017,
+  "anomaly_score": 0.6608415940579011,
+  "is_anomaly": true,
+  "action": "BLOQUEAR_IMEDIATAMENTE",
+  "timestamp": "2025-10-20T14:21:02.658574",
+  "tempo_analise_ms": 312.70861625671387,
+  "evento_id": "evt_1760980862658",
+  "telemetria": {
+    "process_id_count": 65.0,
+    "process_cpu_usage": 78.5,
+    "disk_io_rate": 185.0,
+    "network_connections": 8.0,
+    "file_writes": 95.0,
+    "duration_seconds": 45.0,
+    "memory_usage_mb": 1200.0,
+    "thread_count": 35.0,
+    "registry_modifications": 3.0,
+    "dns_queries": 5.0,
+    "suspicious_ports": 1.0,
+    "parent_process_anomaly": 0.3
+  }
+}

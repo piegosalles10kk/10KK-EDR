@@ -1,0 +1,33 @@
+2025-10-20 12:02:11,400 [INFO] ======================================================================
+2025-10-20 12:02:11,400 [INFO] EDR ULTRA v4.0-ultra - SISTEMA DE TREINAMENTO AVANÇADO
+2025-10-20 12:02:11,401 [INFO] ======================================================================
+2025-10-20 12:02:11,401 [INFO] Configurações:
+2025-10-20 12:02:11,402 [INFO]   • Amostras por classe: 800
+2025-10-20 12:02:11,402 [INFO]   • Estimadores: 100
+2025-10-20 12:02:11,403 [INFO]   • Validação cruzada: NÃO
+2025-10-20 12:02:11,403 [INFO]   • Dataset customizado: Sintético
+2025-10-20 12:02:14,539 [INFO]   Normal (No Threat Detected): 4,000
+2025-10-20 12:02:14,540 [INFO]   T1059.001 - Powershell Execution: 800
+2025-10-20 12:02:14,541 [INFO]   T1055 - Process Injection: 800
+2025-10-20 12:02:14,541 [INFO]   T1566 - Phishing/Initial Access: 800
+2025-10-20 12:02:14,542 [INFO]   T1003 - OS Credential Dumping: 800
+2025-10-20 12:02:14,543 [INFO]   T1070.004 - File Deletion: 800
+2025-10-20 12:02:14,544 [INFO]   T1027 - Obfuscated Files or Information: 800
+2025-10-20 12:02:14,544 [INFO]   T1068 - Exploitation for Privilege Escalation: 800
+2025-10-20 12:02:14,545 [INFO]   T1021.001 - Remote Desktop Protocol: 800
+2025-10-20 12:02:14,546 [INFO]   T1486 - Data Encrypted for Impact (Ransomware): 800
+2025-10-20 12:02:14,547 [INFO]   T1571 - Non-Standard Port: 800
+2025-10-20 12:02:14,550 [INFO]   T1036 - Masquerading: 800
+2025-10-20 12:02:14,551 [INFO]   T1547.001 - Registry Run Keys / Startup Folder: 800
+2025-10-20 12:02:14,552 [INFO]   T1018 - Remote System Discovery: 800
+2025-10-20 12:02:14,554 [INFO]   T1087 - Account Discovery: 800
+2025-10-20 12:02:14,554 [INFO]   T1560 - Archive Collected Data (Exfiltration): 800
+2025-10-20 12:02:14,637 [INFO]   • Treino: 12,000 eventos (75.0%)
+2025-10-20 12:02:14,638 [INFO]   • Teste: 4,000 eventos (25.0%)
+2025-10-20 12:02:14,703 [INFO] 
+======================================================================
+2025-10-20 12:02:14,712 [INFO] ======================================================================
+2025-10-20 12:02:14,713 [INFO] 
+[1/3] Treinando Random Forest...
+2025-10-20 12:02:14,714 [INFO] [2/3] Treinando Gradient Boosting...
+2025-10-20 12:02:14,714 [INFO] [3/3] Treinando Neural Network...

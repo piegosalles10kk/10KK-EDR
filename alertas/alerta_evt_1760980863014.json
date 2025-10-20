@@ -1,0 +1,27 @@
+{
+  "status": "AMEA\u00c7A DETECTADA",
+  "label": 1,
+  "classificacao": "T1059.001 - Powershell Execution",
+  "priority": "ALTA",
+  "confidence": 0.8779425914840937,
+  "anomaly_score": 0.6119635314899003,
+  "is_anomaly": true,
+  "action": "ALERTAR_SOC",
+  "timestamp": "2025-10-20T14:21:03.014172",
+  "tempo_analise_ms": 347.5923538208008,
+  "evento_id": "evt_1760980863014",
+  "telemetria": {
+    "process_id_count": 72.0,
+    "process_cpu_usage": 45.2,
+    "disk_io_rate": 38.5,
+    "network_connections": 28.0,
+    "file_writes": 12.0,
+    "duration_seconds": 320.0,
+    "memory_usage_mb": 890.0,
+    "thread_count": 42.0,
+    "registry_modifications": 8.0,
+    "dns_queries": 45.0,
+    "suspicious_ports": 4.0,
+    "parent_process_anomaly": 0.2
+  }
+}

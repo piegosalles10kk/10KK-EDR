@@ -1,0 +1,27 @@
+{
+  "status": "AMEA\u00c7A CONFIRMADA (Multi-Camadas)",
+  "label": 2,
+  "classificacao": "T1055 - Process Injection",
+  "priority": "CR\u00cdTICA",
+  "confidence": 0.4084563453631505,
+  "anomaly_score": 0.6479252541419362,
+  "is_anomaly": true,
+  "action": "BLOQUEAR_IMEDIATAMENTE",
+  "timestamp": "2025-10-20T14:21:03.615109",
+  "tempo_analise_ms": 284.88779067993164,
+  "evento_id": "evt_1760980863615",
+  "telemetria": {
+    "process_id_count": 55.0,
+    "process_cpu_usage": 28.3,
+    "disk_io_rate": 145.0,
+    "network_connections": 3.0,
+    "file_writes": 18.0,
+    "duration_seconds": 90.0,
+    "memory_usage_mb": 1450.0,
+    "thread_count": 25.0,
+    "registry_modifications": 28.0,
+    "dns_queries": 8.0,
+    "suspicious_ports": 0.0,
+    "parent_process_anomaly": 0.6
+  }
+}

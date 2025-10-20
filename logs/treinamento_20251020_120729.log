@@ -1,0 +1,59 @@
+2025-10-20 12:07:29,514 [INFO] ======================================================================
+2025-10-20 12:07:29,515 [INFO] EDR ULTRA v4.0-ultra - SISTEMA DE TREINAMENTO AVANÇADO
+2025-10-20 12:07:29,516 [INFO] ======================================================================
+2025-10-20 12:07:29,516 [INFO] Configurações:
+2025-10-20 12:07:29,516 [INFO]   - Amostras por classe: 800
+2025-10-20 12:07:29,517 [INFO]   - Estimadores: 100
+2025-10-20 12:07:29,517 [INFO]   - Validação cruzada: NÃO
+2025-10-20 12:07:29,518 [INFO]   - Dataset customizado: Sintético
+2025-10-20 12:07:29,520 [INFO] Gerando dataset sintético...
+2025-10-20 12:07:32,516 [INFO] Concluído: Dataset sintético com 15,200 eventos
+2025-10-20 12:07:32,517 [INFO] 
+Distribuicao de classes:
+2025-10-20 12:07:32,519 [INFO]   Normal (No Threat Detected): 4,000
+2025-10-20 12:07:32,520 [INFO]   T1059.001 - Powershell Execution: 800
+2025-10-20 12:07:32,520 [INFO]   T1055 - Process Injection: 800
+2025-10-20 12:07:32,521 [INFO]   T1566 - Phishing/Initial Access: 800
+2025-10-20 12:07:32,521 [INFO]   T1003 - OS Credential Dumping: 800
+2025-10-20 12:07:32,522 [INFO]   T1070.004 - File Deletion: 800
+2025-10-20 12:07:32,522 [INFO]   T1027 - Obfuscated Files or Information: 800
+2025-10-20 12:07:32,523 [INFO]   T1068 - Exploitation for Privilege Escalation: 800
+2025-10-20 12:07:32,523 [INFO]   T1021.001 - Remote Desktop Protocol: 800
+2025-10-20 12:07:32,524 [INFO]   T1486 - Data Encrypted for Impact (Ransomware): 800
+2025-10-20 12:07:32,524 [INFO]   T1571 - Non-Standard Port: 800
+2025-10-20 12:07:32,525 [INFO]   T1036 - Masquerading: 800
+2025-10-20 12:07:32,525 [INFO]   T1547.001 - Registry Run Keys / Startup Folder: 800
+2025-10-20 12:07:32,528 [INFO]   Classe 13: 800
+2025-10-20 12:07:32,529 [INFO]   T1087 - Account Discovery: 800
+2025-10-20 12:07:32,529 [INFO] 
+Aplicando feature engineering...
+2025-10-20 12:07:32,548 [INFO] Concluído: Features: 19 (12 base + 7 derivadas)
+2025-10-20 12:07:32,576 [INFO] 
+Divisão dos dados:
+2025-10-20 12:07:32,576 [INFO]   - Treino: 11,400 eventos (75.0%)
+2025-10-20 12:07:32,577 [INFO]   - Teste: 3,800 eventos (25.0%)
+2025-10-20 12:07:32,623 [INFO] Concluído: Normalização aplicada (RobustScaler)
+2025-10-20 12:07:32,624 [INFO] 
+======================================================================
+2025-10-20 12:07:32,625 [INFO] TREINAMENTO DO ENSEMBLE MULTI-ALGORITMO
+2025-10-20 12:07:32,625 [INFO] ======================================================================
+2025-10-20 12:07:32,626 [INFO] 
+[1/3] Treinando Random Forest...
+2025-10-20 12:07:32,626 [INFO] [2/3] Treinando Gradient Boosting...
+2025-10-20 12:07:32,627 [INFO] [3/3] Treinando Neural Network...
+2025-10-20 12:07:32,627 [INFO] 
+Combinando modelos em Voting Ensemble...
+2025-10-20 12:11:38,811 [INFO] Concluído: Ensemble treinado em 246.18s
+2025-10-20 12:11:39,532 [INFO] Concluído: Acurácia do Ensemble: 1.0000
+2025-10-20 12:11:39,534 [INFO] 
+======================================================================
+2025-10-20 12:11:39,534 [INFO] TREINAMENTO DO DETECTOR DE ANOMALIAS
+2025-10-20 12:11:39,535 [INFO] ======================================================================
+2025-10-20 12:11:39,545 [INFO] 
+Treinando Isolation Forest com 3,000 eventos normais...
+2025-10-20 12:11:40,545 [INFO] Concluído: Acurácia Isolation Forest: 0.8961
+2025-10-20 12:11:40,546 [INFO] 
+======================================================================
+2025-10-20 12:11:40,547 [INFO] RELATÓRIO DE CLASSIFICAÇÃO DETALHADO
+2025-10-20 12:11:40,547 [INFO] ======================================================================
+

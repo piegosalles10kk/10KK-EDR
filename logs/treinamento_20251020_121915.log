@@ -1,0 +1,107 @@
+2025-10-20 12:19:15,674 [INFO] ======================================================================
+2025-10-20 12:19:15,675 [INFO] EDR ULTRA v4.0-ultra - SISTEMA DE TREINAMENTO AVANÇADO
+2025-10-20 12:19:15,675 [INFO] ======================================================================
+2025-10-20 12:19:15,676 [INFO] Configurações:
+2025-10-20 12:19:15,676 [INFO]   - Amostras por classe: 800
+2025-10-20 12:19:15,678 [INFO]   - Estimadores: 100
+2025-10-20 12:19:15,678 [INFO]   - Validação cruzada: SIM
+2025-10-20 12:19:15,678 [INFO]   - Dataset customizado: Sintético
+2025-10-20 12:19:15,679 [INFO] Gerando dataset sintético...
+2025-10-20 12:19:18,042 [INFO] Concluído: Dataset sintético com 15,200 eventos
+2025-10-20 12:19:18,043 [INFO] 
+Distribuicao de classes:
+2025-10-20 12:19:18,044 [INFO]   Normal (No Threat Detected): 4,000
+2025-10-20 12:19:18,045 [INFO]   T1059.001 - Powershell Execution: 800
+2025-10-20 12:19:18,045 [INFO]   T1055 - Process Injection: 800
+2025-10-20 12:19:18,045 [INFO]   T1566 - Phishing/Initial Access: 800
+2025-10-20 12:19:18,046 [INFO]   T1003 - OS Credential Dumping: 800
+2025-10-20 12:19:18,046 [INFO]   T1070.004 - File Deletion: 800
+2025-10-20 12:19:18,047 [INFO]   T1027 - Obfuscated Files or Information: 800
+2025-10-20 12:19:18,047 [INFO]   T1068 - Exploitation for Privilege Escalation: 800
+2025-10-20 12:19:18,047 [INFO]   T1021.001 - Remote Desktop Protocol: 800
+2025-10-20 12:19:18,048 [INFO]   T1486 - Data Encrypted for Impact (Ransomware): 800
+2025-10-20 12:19:18,048 [INFO]   T1571 - Non-Standard Port: 800
+2025-10-20 12:19:18,048 [INFO]   T1036 - Masquerading: 800
+2025-10-20 12:19:18,049 [INFO]   T1547.001 - Registry Run Keys / Startup Folder: 800
+2025-10-20 12:19:18,049 [INFO]   T1087 - Account Discovery: 800
+2025-10-20 12:19:18,049 [INFO]   T1560 - Archive Collected Data (Exfiltration): 800
+2025-10-20 12:19:18,050 [INFO] 
+Aplicando feature engineering...
+2025-10-20 12:19:18,062 [INFO] Concluído: Features: 19 (12 base + 7 derivadas)
+2025-10-20 12:19:18,081 [INFO] 
+Divisão dos dados:
+2025-10-20 12:19:18,082 [INFO]   - Treino: 11,400 eventos (75.0%)
+2025-10-20 12:19:18,082 [INFO]   - Teste: 3,800 eventos (25.0%)
+2025-10-20 12:19:18,115 [INFO] Concluído: Normalização aplicada (RobustScaler)
+2025-10-20 12:19:18,116 [INFO] 
+======================================================================
+2025-10-20 12:19:18,116 [INFO] TREINAMENTO DO ENSEMBLE MULTI-ALGORITMO
+2025-10-20 12:19:18,117 [INFO] ======================================================================
+2025-10-20 12:19:18,117 [INFO] 
+[1/3] Treinando Random Forest...
+2025-10-20 12:19:18,117 [INFO] [2/3] Treinando Gradient Boosting...
+2025-10-20 12:19:18,118 [INFO] [3/3] Treinando Neural Network...
+2025-10-20 12:19:18,118 [INFO] 
+Combinando modelos em Voting Ensemble...
+2025-10-20 12:23:34,587 [INFO] Concluído: Ensemble treinado em 256.47s
+2025-10-20 12:23:35,047 [INFO] Concluído: Acurácia do Ensemble: 1.0000
+2025-10-20 12:23:35,048 [INFO] 
+Executando validação cruzada (5-fold)...
+2025-10-20 12:23:50,769 [INFO] Concluído: CV Score: 1.0000 (+/- 0.0000)
+2025-10-20 12:23:50,771 [INFO] 
+======================================================================
+2025-10-20 12:23:50,774 [INFO] TREINAMENTO DO DETECTOR DE ANOMALIAS
+2025-10-20 12:23:50,775 [INFO] ======================================================================
+2025-10-20 12:23:50,789 [INFO] 
+Treinando Isolation Forest com 3,000 eventos normais...
+2025-10-20 12:23:51,756 [INFO] Concluído: Acurácia Isolation Forest: 0.8650
+2025-10-20 12:23:51,756 [INFO] 
+======================================================================
+2025-10-20 12:23:51,757 [INFO] RELATÓRIO DE CLASSIFICAÇÃO DETALHADO
+2025-10-20 12:23:51,758 [INFO] ======================================================================
+
+2025-10-20 12:23:51,795 [INFO] 
+Matriz de Confusão salva em: metricas/confusion_matrix.npy
+2025-10-20 12:23:51,797 [INFO] 
+======================================================================
+2025-10-20 12:23:51,798 [INFO] SALVANDO ARTEFATOS
+2025-10-20 12:23:51,804 [INFO] ======================================================================
+2025-10-20 12:23:52,979 [INFO] Concluído: Base de treinamento: modelos/training_base_v4.csv
+2025-10-20 12:23:53,581 [INFO] Concluído: Scaler: modelos/scaler_v4.joblib
+2025-10-20 12:23:53,582 [INFO] Concluído: Ensemble: modelos/ensemble_v4.joblib
+2025-10-20 12:23:53,590 [INFO] Concluído: Anomaly Detector: modelos/anomaly_v4.joblib
+2025-10-20 12:23:53,591 [INFO] Concluído: Features: modelos/features_v4.joblib
+2025-10-20 12:23:53,592 [INFO] Concluído: MITRE Mapping: modelos/mitre_mapping_v4.joblib
+2025-10-20 12:23:53,594 [INFO] Concluído: Informações de versão: modelos/version_info.json
+2025-10-20 12:23:53,595 [INFO] 
+======================================================================
+2025-10-20 12:23:53,596 [INFO] DOWNLOAD MITRE ATT&CK
+2025-10-20 12:23:53,597 [INFO] ======================================================================
+2025-10-20 12:23:54,359 [INFO] Concluído: Download completo: 37.94 MB
+2025-10-20 12:23:55,090 [INFO] Concluído: JSON validado: 22652 objetos
+2025-10-20 12:23:55,116 [INFO] Concluído: Contexto MITRE: 18 técnicas
+2025-10-20 12:23:55,117 [INFO] 
+======================================================================
+2025-10-20 12:23:55,118 [INFO] TREINAMENTO CONCLUÍDO COM SUCESSO!
+2025-10-20 12:23:55,120 [INFO] ======================================================================
+2025-10-20 12:23:55,120 [INFO] 
+RESUMO EXECUTIVO:
+2025-10-20 12:23:55,121 [INFO]   - Versão: EDR Ultra v4.0-ultra
+2025-10-20 12:23:55,122 [INFO]   - Dataset: 15,200 eventos
+2025-10-20 12:23:55,123 [INFO]   - Features: 19
+2025-10-20 12:23:55,124 [INFO]   - Técnicas ATT&CK: 14
+2025-10-20 12:23:55,125 [INFO]   - Acurácia Ensemble: 100.00%
+2025-10-20 12:23:55,130 [INFO]   - Acurácia Anomalia: 86.50%
+2025-10-20 12:23:55,147 [INFO]   - Tempo de Treino: 256.47s
+2025-10-20 12:23:55,148 [INFO] 
+Arquivos gerados:
+2025-10-20 12:23:55,149 [INFO]   - modelos/*.joblib (5 arquivos)
+2025-10-20 12:23:55,150 [INFO]   - modelos/training_base_v4.csv
+2025-10-20 12:23:55,151 [INFO]   - modelos/version_info.json
+2025-10-20 12:23:55,152 [INFO]   - logs/treinamento_*.log
+2025-10-20 12:23:55,153 [INFO] 
+Proximo passo:
+2025-10-20 12:23:55,155 [INFO]   python jogador-v4-operacional.py
+2025-10-20 12:23:55,156 [INFO] ======================================================================
+
+2025-10-20 12:23:55,158 [INFO] Finalizado em: 2025-10-20 12:23:55
